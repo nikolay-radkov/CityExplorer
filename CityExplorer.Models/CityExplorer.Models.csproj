@@ -52,8 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Continent.cs" />
+    <Compile Include="EventType.cs" />
+    <Compile Include="Photo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Place.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs" />
+    <Compile Include="VIP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

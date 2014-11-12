@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityExplorer.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,9 @@ namespace CityExplorer.Web.Controllers
     {
         public ActionResult Index()
         {
+            CityExplorerDbContext context = new CityExplorerDbContext();
+
+            context.Countries.Where(x => 1 == 1);
             return View();
         }
 
