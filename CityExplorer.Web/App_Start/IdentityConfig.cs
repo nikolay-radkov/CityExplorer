@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using CityExplorer.Web.Models;
+using CityExplorer.Models;
+using CityExplorer.Data;
 
 namespace CityExplorer.Web
 {
