@@ -1,10 +1,12 @@
 ﻿namespace CityExplorer.Models
 {
+    using CityExplorer.Data.Contracts;
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class City
+    public class City : IDeletableEntity
     {
         private ICollection<VIP> vips;
         private ICollection<Place> places;
@@ -82,5 +84,9 @@
             get { return ratings; }
             set { ratings = value; }
         }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
     }
 }

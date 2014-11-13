@@ -1,9 +1,10 @@
 ﻿namespace CityExplorer.Models
 {
+    using CityExplorer.Data.Contracts;
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Event
+    public class Event : IDeletableEntity
     {
         public int Id { get; set; }
 
@@ -22,5 +23,9 @@
         public int CityId { get; set; }
 
         public virtual City City { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
     }
 }

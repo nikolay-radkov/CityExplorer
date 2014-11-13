@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.ComponentModel.DataAnnotations;
+    using CityExplorer.Data.Contracts;
 
     public class User : IdentityUser
     {
@@ -77,5 +78,5 @@
          
             return userIdentity;
         }
-    }
+   }
 }

@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CityExplorer.Data.Contracts;
+using System.ComponentModel.DataAnnotations;
 namespace CityExplorer.Models
 {
-    public class VIP
+    public class VIP : IDeletableEntity
     {
         public int Id { get; set; }
 
@@ -19,5 +20,9 @@ namespace CityExplorer.Models
         public int CityId { get; set; }
 
         public virtual City City { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public System.DateTime? DeletedOn { get; set; }
     }
 }

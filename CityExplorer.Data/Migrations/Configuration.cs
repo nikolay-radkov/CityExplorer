@@ -1,11 +1,12 @@
 namespace CityExplorer.Data.Migrations
 {
+    using CityExplorer.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CityExplorer.Data.CityExplorerDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<CityExplorerDbContext>
     {
         public Configuration()
         {
@@ -13,20 +14,34 @@ namespace CityExplorer.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(CityExplorer.Data.CityExplorerDbContext context)
+        protected override void Seed(CityExplorerDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!context.Continents.Any())
+            {
+                context.Continents.Add(
+                  new Continent { Name = "Europe" }
+                );
+                context.Continents.Add(
+                  new Continent { Name = "Asia" }
+                  );
+                context.Continents.Add(
+                    new Continent { Name = "Africa" }
+                );
+                context.Continents.Add(
+                    new Continent { Name = "North America" }
+                );
+                context.Continents.Add(
+                    new Continent { Name = "South America" }
+                );
+                context.Continents.Add(
+                    new Continent { Name = "Australia" }
+                );
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+
+
+
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -19,6 +19,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityExplorer.Web", "CityExp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityExplorer.Web.Tests", "CityExplorer.Web.Tests\CityExplorer.Web.Tests.csproj", "{3184D504-8D08-4BF3-8A65-0A68D695E8C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityExplorer.Data.Contracts", "CityExplorer.Data.Contracts\CityExplorer.Data.Contracts.csproj", "{DEA576F9-4313-40D7-8041-57A10CD79A1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BCC13BD7-8ECC-42AD-A310-BF915B728B7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1EECAE3B-D501-4261-8AB1-74F1FC2CA63F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,14 +56,20 @@ Global
 		{3184D504-8D08-4BF3-8A65-0A68D695E8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3184D504-8D08-4BF3-8A65-0A68D695E8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3184D504-8D08-4BF3-8A65-0A68D695E8C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA576F9-4313-40D7-8041-57A10CD79A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA576F9-4313-40D7-8041-57A10CD79A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA576F9-4313-40D7-8041-57A10CD79A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA576F9-4313-40D7-8041-57A10CD79A1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A77313DE-7856-4A42-9701-C84D08F5B0C1} = {BCC13BD7-8ECC-42AD-A310-BF915B728B7D}
 		{394BAAED-D279-434F-AA13-C287EF4D9C7A} = {1445F3CF-49BF-4BC3-8477-73144C9906FF}
 		{E64E12C7-B3A0-4DFD-B550-DF18C77BB031} = {1445F3CF-49BF-4BC3-8477-73144C9906FF}
 		{D5391B33-7CAE-40DD-80E0-38F7F0DC9B87} = {200CF540-E9FB-4D67-BE3B-40E10724EB48}
 		{3184D504-8D08-4BF3-8A65-0A68D695E8C6} = {200CF540-E9FB-4D67-BE3B-40E10724EB48}
+		{DEA576F9-4313-40D7-8041-57A10CD79A1D} = {1445F3CF-49BF-4BC3-8477-73144C9906FF}
 	EndGlobalSection
 EndGlobal

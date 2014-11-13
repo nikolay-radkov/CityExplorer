@@ -1,10 +1,11 @@
 ﻿namespace CityExplorer.Models
 {
+    using CityExplorer.Data.Contracts;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Continent
+    public class Continent : IDeletableEntity
     {
         private ICollection<Country> countries;
 
@@ -32,5 +33,9 @@
                 this.countries = value;
             }
         }
+
+        public bool IsDeleted { get; set; }
+
+        public System.DateTime? DeletedOn { get; set; }
     }
 }

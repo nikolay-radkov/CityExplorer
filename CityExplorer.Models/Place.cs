@@ -1,9 +1,10 @@
 ﻿namespace CityExplorer.Models
 {
+    using CityExplorer.Data.Contracts;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Place
+    public class Place : IDeletableEntity
     {
         private ICollection<Photo> photos;
 
@@ -33,5 +34,9 @@
                 this.photos = value;
             }
         }
+
+        public bool IsDeleted { get; set; }
+
+        public System.DateTime? DeletedOn { get; set; }
     }
 }
