@@ -21,6 +21,8 @@
         [MaxLength(50)]
         public string Name { get; set; }
 
+        public string Image { get; set; }
+
         public int ContinentId { get; set; }
 
         public virtual Continent Continent { get; set; }

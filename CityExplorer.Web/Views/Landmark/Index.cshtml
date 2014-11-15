@@ -1,0 +1,21 @@
+﻿@model CityExplorer.Web.ViewModels.LandmarkViewModel
+@{
+    ViewBag.Title = "Landmarks";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <h1>@Model.Name</h1>
+    </div>
+    <div class="col-md-3 text-right">
+        <h1>@Html.ActionLink("+", "Insert", "Photo")</h1>
+    </div>
+</div>
+<div class="row">
+    @foreach (var photo in Model.Photos)
+    {
+        <div class="col-md-3 text-center">
+                <img src="@photo.Url" class="image-content" alt="@Model.Name image" />
+        </div>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CityExplorer.Web.ViewModels.LandmarkViewModel>
+
+<div class="row">
+    <div class="col-md-9">
+        <h1>Landmarks</h1>
+    </div>
+    <div class="col-md-3 text-right">
+        <h1>@Html.ActionLink("+", "Insert", "Landmarks")</h1>
+    </div>
+</div>
+<div class="row">
+    @foreach (var landmark in Model)
+    {
+        <div class="col-md-3 text-center">
+            <a href="@Url.Action("Index", "Landmark", routeValues: new
+                            {
+                                id = @landmark.Id
+                            })">
+                <label>@landmark.Name</label>
+                <img src="@landmark.Photos.FirstOrDefault().Url" class="image-content" alt="@landmark.Name image" />
+            </a>
+        </div>
+    }
+</div>

@@ -1,9 +1,11 @@
 ﻿namespace CityExplorer.Models
 {
-    using CityExplorer.Data.Contracts;
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using CityExplorer.Data.Contracts;
 
     public class Continent : IDeletableEntity
     {
@@ -21,6 +23,8 @@
         [MaxLength(50)]
         public string Name { get; set; }
 
+        public string Image { get; set; }
+
         public virtual ICollection<Country> Countries
         {
             get
@@ -36,6 +40,6 @@
 
         public bool IsDeleted { get; set; }
 
-        public System.DateTime? DeletedOn { get; set; }
+        public DateTime? DeletedOn { get; set; }
     }
 }

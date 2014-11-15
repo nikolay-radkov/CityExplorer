@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("../Images/background.png");
+background-repeat: repeat;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +23,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.image-content {
+    width: 100%;
+    height: 100%;
+}
+
+.scroller {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNet.Identity
+@model CityExplorer.Web.InputModels.CommentInputModel
+@{
+    ViewBag.CityId = Model.CityId;
+}
+
+@if (Request.IsAuthenticated)
+{
+    using (Ajax.BeginForm("Comment", "City", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "comments-container"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Text, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Text, new { @class = "" })
+                <input type="submit" value="Comment" class="btn btn-default" />
+                @Html.ValidationMessageFor(m => m.Text, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <input type="hidden" name="CityId" value="@ViewBag.CityId" />
+    }
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

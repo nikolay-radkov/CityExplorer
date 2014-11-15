@@ -10,9 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using CityExplorer.Web.Models;
-using CityExplorer.Models;
 using CityExplorer.Data;
+using CityExplorer.Models;
 
 namespace CityExplorer.Web
 {

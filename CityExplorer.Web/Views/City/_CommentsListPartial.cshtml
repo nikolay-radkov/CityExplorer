@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CityExplorer.Web.ViewModels.CommentViewModel>
+<h2>Comments</h2>
+<div class="scroller">
+    @foreach (var comment in Model.OrderBy(c => c.DateCreated))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <span> @comment.User.UserName</span>
+            </div>
+            <div class="col-md-5 text-right">commented on @comment.DateCreated</div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-11">
+                <p>@comment.Text</p>
+            </div>
+        </div>
+    }
+</div>

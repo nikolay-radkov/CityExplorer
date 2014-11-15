@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CityExplorer.Web.ViewModels.CityViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+
+    @foreach (var city in Model)
+    {
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Details", "City",  routeValues: new
+                            {
+                                id = @city.Id
+                            })">
+                <h2>@city.Name</h2>
+             
+            </a>
+        </div>
+    }
+</div>

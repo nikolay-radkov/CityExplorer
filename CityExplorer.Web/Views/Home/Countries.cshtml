@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CityExplorer.Web.ViewModels.CountryViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+
+    @foreach (var country in Model)
+    {
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Cities", "Home",  routeValues: new
+                            {
+                                countryId = @country.Id
+                            })">
+                <h2>@country.Name</h2>
+                <img class="image-content" src="@country.Image" alt="@country.Name  map" />
+            </a>
+        </div>
+    }
+</div>

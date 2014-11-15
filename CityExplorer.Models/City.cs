@@ -38,7 +38,7 @@
 
         public string Website { get; set; }
 
-        public int SettledYear { get; set; }
+        public string SettledYear { get; set; }
 
         public string Description { get; set; }
 

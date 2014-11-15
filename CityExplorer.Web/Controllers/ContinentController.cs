@@ -20,7 +20,7 @@ namespace CityExplorer.Web.Controllers
                 .AsQueryable()
                 .Project()
                 .To<ContinentViewModel>()
-                .FirstOrDefault();
+                .ToList();
 
             return View(contints);
         }

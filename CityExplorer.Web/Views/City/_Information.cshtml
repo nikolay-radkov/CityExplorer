@@ -1,0 +1,70 @@
+﻿@model CityExplorer.Web.ViewModels.CityInformationViewModel
+@{
+    ViewBag.Title = "Information";
+}
+
+<h2>Information</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Name, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Country.Name, "Country", new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Country.Name, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.SettledYear, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.SettledYear, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Area, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Area, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Population, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Population, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Description, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Description, new { @class = "form-control" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.Website, new { @class = "control-label" })
+    </div>
+    <div class="col-md-9">
+        @Html.DisplayFor(m => m.Website, new { @class = "form-control" })
+    </div>
+</div>
+<br />
+<br />
+<div id="comments-container">
+    @Html.Action("CommentsListPartial", new { cityId = Model.Id })
+</div>
+
+@Html.Partial("_Comment", new CityExplorer.Web.InputModels.CommentInputModel { CityId = Model.Id })

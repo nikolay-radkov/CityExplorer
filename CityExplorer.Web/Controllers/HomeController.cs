@@ -1,34 +1,57 @@
 ﻿using CityExplorer.Data;
+using CityExplorer.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper.QueryableExtensions;
 
 namespace CityExplorer.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        public HomeController(ICityExplorerData data)
+            : base(data)
+        {
+
+        }
+
+        [OutputCache(Duration = 20 * 60)]
         public ActionResult Index()
         {
-            CityExplorerDbContext context = new CityExplorerDbContext();
+            var continents = this.Data.Continents.All()
+              .AsQueryable()
+              .Project()
+              .To<ContinentViewModel>();
 
-            context.Countries.Where(x => 1 == 1);
-            return View();
+            return View(continents);
         }
 
-        public ActionResult About()
+        [OutputCache(Duration = 10 * 60)]
+        public ActionResult Countries(int continentid)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var counties = this.Data.Countries
+                                        .All()
+                                        .Where(c => c.ContinentId == continentid)
+                                        .AsQueryable()
+                                        .Project()
+                                        .To<CountryViewModel>();
+            return View(counties);
         }
 
-        public ActionResult Contact()
+        [OutputCache(Duration = 5 * 60)]
+        public ActionResult Cities(int countryId)
         {
-            ViewBag.Message = "Your contact page.";
+            var city = this.Data.Cities
+                                    .All()
+                                  .Where(c => c.CountryId == countryId)
+                                    .AsQueryable()
+                                    .Project()
+                                    .To<CityViewModel>();
 
-            return View();
+            return View(city);
         }
+
     }
 }

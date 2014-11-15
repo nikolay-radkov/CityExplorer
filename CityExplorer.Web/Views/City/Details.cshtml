@@ -1,0 +1,163 @@
+﻿@model CityExplorer.Web.ViewModels.CityViewModel
+
+@{
+    ViewBag.Title = "City";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <aside class="panel panel-default">
+            <div class="panel-heading"><h3>@Model.Name</h3></div>
+            <div class="panel-body">
+                <ul>
+                    <li>
+                        @Ajax.ActionLink(
+                            "Information",
+                            "Information",
+                            "City",
+                            new
+                            {
+                                id = @Model.Id
+                            },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "content",
+                                LoadingElementId = "content-loading",
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "OnAjaxRequestBegin",
+                                OnFailure = "OnAjaxRequestFailure",
+                                OnSuccess = "OnAjaxRequestSuccess",
+                                OnComplete = "OnAjaxRequestComplete"
+                            },
+                            new
+                            {
+                                @class = "btn btn-primary"
+                            })
+                    </li>
+                    <li>
+                        @Ajax.ActionLink(
+                            "Landmarks",
+                            "Landmarks",
+                            "City",
+                            new
+                            {
+                                id = @Model.Id
+                            },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "content",
+                                LoadingElementId = "content-loading",
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "OnAjaxRequestBegin",
+                                OnFailure = "OnAjaxRequestFailure",
+                                OnSuccess = "OnAjaxRequestSuccess",
+                                OnComplete = "OnAjaxRequestComplete"
+                            },
+                            new
+                            {
+                                @class = "btn btn-primary"
+                            })
+                    </li>
+                    <li>
+                        @Ajax.ActionLink(
+                            "Famous people",
+                            "People",
+                            "City",
+                            new
+                            {
+                                id = @Model.Id
+                            },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "content",
+                                LoadingElementId = "content-loading",
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "OnAjaxRequestBegin",
+                                OnFailure = "OnAjaxRequestFailure",
+                                OnSuccess = "OnAjaxRequestSuccess",
+                                OnComplete = "OnAjaxRequestComplete"
+                            },
+                            new
+                            {
+                                @class = "btn btn-primary"
+                            })
+                    </li>
+                    <li>
+                        @Ajax.ActionLink(
+                            "Gallery",
+                            "Gallery",
+                            "City",
+                            new
+                            {
+                                id = @Model.Id
+                            },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "content",
+                                LoadingElementId = "content-loading",
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "OnAjaxRequestBegin",
+                                OnFailure = "OnAjaxRequestFailure",
+                                OnSuccess = "OnAjaxRequestSuccess",
+                                OnComplete = "OnAjaxRequestComplete"
+                            },
+                            new { @class = "btn btn-primary" })
+                    </li>
+                    <li>
+                        @Ajax.ActionLink(
+                            "Events",
+                            "Events",
+                            "City",
+                            new
+                            {
+                                id = @Model.Id
+                            },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "content",
+                                LoadingElementId = "content-loading",
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "OnAjaxRequestBegin",
+                                OnFailure = "OnAjaxRequestFailure",
+                                OnSuccess = "OnAjaxRequestSuccess",
+                                OnComplete = "OnAjaxRequestComplete"
+                            },
+                            new
+                            {
+                                @class = "btn btn-primary"
+                            })
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <div class="col-md-9">
+        <div id="content-loading" style="display: none">Loading content...</div>
+        <div id="content">
+            @Html.Action("Information", "City", new { id = Model.Id })
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        function OnAjaxRequestBegin() {
+            console.log("This is the OnBegin Callback");
+        }
+        function OnAjaxRequestSuccess(data) {
+            console.log("This is the OnSuccessCallback: " + data);
+        }
+        function OnAjaxRequestFailure(request, error) {
+            console.log("This is the OnFailure Callback:" + error);
+        }
+        function OnAjaxRequestComplete(request, status) {
+            console.log("This is the OnComplete Callback");
+            console.log(request);
+        }
+    </script>
+}
