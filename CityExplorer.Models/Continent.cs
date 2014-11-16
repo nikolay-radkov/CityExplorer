@@ -7,7 +7,7 @@
 
     using CityExplorer.Data.Contracts;
 
-    public class Continent : IDeletableEntity
+    public class Continent : DeletableEntity
     {
         private ICollection<Country> countries;
 

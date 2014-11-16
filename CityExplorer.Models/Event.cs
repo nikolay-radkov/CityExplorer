@@ -4,7 +4,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Event : IDeletableEntity
+    public class Event : DeletableEntity
     {
         public int Id { get; set; }
 

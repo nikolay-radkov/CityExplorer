@@ -6,7 +6,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class City : IDeletableEntity
+    public class City : DeletableEntity
     {
         private ICollection<VIP> vips;
         private ICollection<Place> places;

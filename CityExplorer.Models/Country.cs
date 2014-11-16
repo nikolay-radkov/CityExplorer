@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Country : IDeletableEntity
+    public class Country : DeletableEntity
     {
         private ICollection<City> cities;
 

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace CityExplorer.Models
 {
-    public class Photo : IDeletableEntity
+    public class Photo : DeletableEntity
     {
         public int Id { get; set; }
 

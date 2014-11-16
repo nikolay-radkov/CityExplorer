@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Place : IDeletableEntity
+    public class Place : DeletableEntity
     {
         private ICollection<Photo> photos;
 

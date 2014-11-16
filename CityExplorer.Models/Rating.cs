@@ -4,7 +4,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Rating : IDeletableEntity
+    public class Rating : DeletableEntity
     {
         public int Id { get; set; }
 

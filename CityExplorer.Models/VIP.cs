@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace CityExplorer.Models
 {
-    public class VIP : IDeletableEntity
+    public class VIP : DeletableEntity
     {
         public int Id { get; set; }
 

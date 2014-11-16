@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 namespace CityExplorer.Models
 {
-    public class Comment : IDeletableEntity
+    public class Comment : DeletableEntity
     {
         public int Id { get; set; }
 
