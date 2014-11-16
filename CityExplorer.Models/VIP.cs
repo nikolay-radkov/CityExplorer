@@ -17,6 +17,9 @@ namespace CityExplorer.Models
 
         public string Website { get; set; }
 
+        [Required]
+        public string Photo { get; set; }
+
         public int CityId { get; set; }
 
         public virtual City City { get; set; }

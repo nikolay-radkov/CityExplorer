@@ -51,7 +51,12 @@ namespace CityExplorer.Web.Controllers
 
         public ActionResult People(int id)
         {
-            return GetPartialView(id, "_People");
+            var city = this.Data.Cities.GetById(id);
+
+            var vips = city.VIPs.ToList();
+            var vipsViewModel = Mapper.Map<ICollection<VipViewModel>>(vips);
+
+            return PartialView("_People", vipsViewModel);
         }
 
         public ActionResult Gallery(int id)

@@ -18,7 +18,6 @@
 
         }
 
-
         public ActionResult Index(int id)
         {
             var landmark = this.Data.Places.GetById(id);
