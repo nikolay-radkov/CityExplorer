@@ -1,17 +1,30 @@
-﻿@model IEnumerable<CityExplorer.Web.ViewModels.ContinentViewModel>
+﻿@model IList<CityExplorer.Web.ViewModels.ContinentViewModel>
 @{
     ViewBag.Title = "Home Page";
 }
 
-@foreach (var continent in Model)
+@for (int i = 0; i < Model.Count; i++)
 {
-    <div class="continent text-center">
-        <a href="@Url.Action("Countries", "Home",  routeValues: new
-                            {
-                                continentId = @continent.Id
-                            })">
-            <h3>@continent.Name</h3>
-            <img class="image-content" src="@continent.Image" alt="@continent.Name  map" />
-        </a>
+    <div class="row text-center">
+        @for (int j = 0; j < 4; j++, i++)
+        {
+            if (i == Model.Count)
+            {
+                break;
+            }
+
+            <div class="col-md-3">
+                <a href="@Url.Action("Countries", "Home",  routeValues: new
+                    {
+                        continentId = @Model[i].Id
+                    })">
+                    <h3>@Model[i].Name</h3>
+                    <img class="image-content" src="@Model[i].Image" alt="@Model[i].Name  map" />
+                </a>
+            </div>
+        }
+        @{
+            i--;
+        }
     </div>
 }

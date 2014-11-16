@@ -23,7 +23,8 @@ namespace CityExplorer.Web.Controllers
             var continents = this.Data.Continents.All()
               .AsQueryable()
               .Project()
-              .To<ContinentViewModel>();
+              .To<ContinentViewModel>()
+              .ToList();
 
             return View(continents);
         }
