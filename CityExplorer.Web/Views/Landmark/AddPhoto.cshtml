@@ -1,0 +1,20 @@
+﻿@model CityExplorer.Web.InputModels.LandmarkInputModel
+@{
+    ViewBag.Title = "Add Photo";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("AddPhoto", "Landmark", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <label for="file">Upload Image:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="Upload" class="submit" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

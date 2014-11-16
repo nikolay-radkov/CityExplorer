@@ -27,12 +27,36 @@ textarea {
 
 
 .image-content {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
 }
 
 .scroller {
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.add-button {
+    color:greenyellow;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    display: inline-block;
+    border: 3px solid greenyellow;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    text-decoration: none;
+    color:red;
+}
+
+.continent {
+    display: inline-block;
+    margin: 10px;
 }

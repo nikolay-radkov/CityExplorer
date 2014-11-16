@@ -1,9 +1,20 @@
 ﻿@model IEnumerable<CityExplorer.Web.ViewModels.CityViewModel>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Cities";
 }
 <div class="row">
+    <div class="col-md-9">
+        <h1>@ViewBag.Title</h1>
+    </div>
+    @if (Request.IsAuthenticated)
+    {
+        <div class="col-md-3 text-right">
+            <h1>@Html.ActionLink("+", "Insert", "City", new { id = Request.Params["countryId"] }, new { @class = "add-button" })</h1>
+        </div>
+    }
+</div>
 
+<div class="row">
     @foreach (var city in Model)
     {
         <div class="col-md-4 text-center">
@@ -12,7 +23,6 @@
                                 id = @city.Id
                             })">
                 <h2>@city.Name</h2>
-             
             </a>
         </div>
     }

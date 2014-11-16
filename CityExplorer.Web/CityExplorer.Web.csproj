@@ -221,7 +221,11 @@
     <Compile Include="Infrastructure\Mapping\AutoMapperConfig.cs" />
     <Compile Include="Infrastructure\Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mapping\IMapFrom.cs" />
+    <Compile Include="InputModels\CityInputModel.cs" />
     <Compile Include="InputModels\CommentInputModel.cs" />
+    <Compile Include="InputModels\CountryInputModel.cs" />
+    <Compile Include="InputModels\LandmarkViewModel.cs" />
+    <Compile Include="InputModels\PhotoInputModel.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -289,7 +293,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -321,18 +324,22 @@
     <Content Include="Views\City\_Events.cshtml" />
     <Content Include="Views\City\_Comment.cshtml" />
     <Content Include="Views\City\_CommentsListPartial.cshtml" />
+    <Content Include="Views\City\Insert.cshtml" />
+    <Content Include="Views\Country\Insert.cshtml" />
     <None Include="Views\Home\Countries.cshtml" />
     <Content Include="Views\Home\Cities.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Double.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Int64.cshtml" />
-    <Content Include="Views\Landmark\Insert.cshtml" />
+    <Content Include="Views\Landmark\AddPhoto.cshtml" />
     <Content Include="Views\Landmark\Index.cshtml" />
+    <Content Include="Views\Landmark\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Files\Cities\" />
     <Folder Include="Files\Countries\" />
+    <Folder Include="Views\Photo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

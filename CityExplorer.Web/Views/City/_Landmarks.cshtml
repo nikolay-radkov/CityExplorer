@@ -4,21 +4,35 @@
     <div class="col-md-9">
         <h1>Landmarks</h1>
     </div>
-    <div class="col-md-3 text-right">
-        <h1>@Html.ActionLink("+", "Insert", "Landmarks")</h1>
-    </div>
-</div>
-<div class="row">
-    @foreach (var landmark in Model)
+    @if (Request.IsAuthenticated)
     {
-        <div class="col-md-3 text-center">
-            <a href="@Url.Action("Index", "Landmark", routeValues: new
-                            {
-                                id = @landmark.Id
-                            })">
-                <label>@landmark.Name</label>
-                <img src="@landmark.Photos.FirstOrDefault().Url" class="image-content" alt="@landmark.Name image" />
-            </a>
+        <div class="col-md-3 text-right">
+            <h1>@Html.ActionLink("+", "Insert", "Landmark", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })</h1>
         </div>
     }
 </div>
+@if (Model.Count() != 0)
+{
+    <div class="row">
+
+        @foreach (var landmark in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb text-center">
+                <div class="thumbnail">
+                    <a href="@Url.Action("Index", "Landmark", routeValues: new
+                            {
+                                id = @landmark.Id
+                            })">
+                        <label>@landmark.Name</label>
+                        <img src="@landmark.Photos.FirstOrDefault().Url" class="img-responsive" alt="@landmark.Name image" />
+                    </a>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+else
+{
+    <h3>No landmarks added!</h3>
+}

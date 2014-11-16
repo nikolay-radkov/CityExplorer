@@ -1,7 +1,18 @@
 ﻿@model IEnumerable<CityExplorer.Web.ViewModels.CountryViewModel>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Countries";
 }
+<div class="row">
+    <div class="col-md-9">
+        <h1>@ViewBag.Title</h1>
+    </div>
+    @if (Request.IsAuthenticated)
+    {
+        <div class="col-md-3 text-right">
+            <h1>@Html.ActionLink("+", "Insert", "Country", new { id = Request.Params["continentId"] }, new { @class = "add-button" })</h1>
+        </div>
+    }
+</div>
 <div class="row">
 
     @foreach (var country in Model)

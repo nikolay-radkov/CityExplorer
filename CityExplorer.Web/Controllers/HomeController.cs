@@ -17,7 +17,7 @@ namespace CityExplorer.Web.Controllers
 
         }
 
-        [OutputCache(Duration = 20 * 60)]
+       // [OutputCache(Duration = 20 * 60)]
         public ActionResult Index()
         {
             var continents = this.Data.Continents.All()

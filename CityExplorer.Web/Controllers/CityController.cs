@@ -21,7 +21,6 @@ namespace CityExplorer.Web.Controllers
 
         public ActionResult Index()
         {
-
             return View();
         }
 
@@ -57,7 +56,10 @@ namespace CityExplorer.Web.Controllers
 
         public ActionResult Gallery(int id)
         {
-            return GetPartialView(id, "_Gallery");
+            var city = this.Data.Cities.GetById(id);
+            var gallery = Mapper.Map<IEnumerable<PhotoViewModel>>(city.Places.SelectMany(p => p.Photos));
+
+            return PartialView("_Gallery", gallery);
         }
 
         public ActionResult Events(int id)
@@ -95,6 +97,30 @@ namespace CityExplorer.Web.Controllers
             var comments = Mapper.Map<ICollection<CommentViewModel>>(city.Comments);
 
             return PartialView("_CommentsListPartial", comments);
+        }
+
+        [HttpGet]
+        public ActionResult Insert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Insert(int id, CityInputModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var city = Mapper.Map<City>(model);
+                city.CountryId = id;
+
+                this.Data.Cities.Add(city);
+                this.Data.SaveChanges();
+
+                return RedirectToAction("Details", "City", new { id = city.Id });
+            }
+
+            return View(model);
         }
 
         [NonAction]

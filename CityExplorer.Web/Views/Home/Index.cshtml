@@ -2,18 +2,16 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div class="row">
 
-    @foreach (var continent in Model)
-    {
-        <div class="col-md-4 text-center">
-            <a href="@Url.Action("Countries", "Home",  routeValues: new
+@foreach (var continent in Model)
+{
+    <div class="continent text-center">
+        <a href="@Url.Action("Countries", "Home",  routeValues: new
                             {
                                 continentId = @continent.Id
                             })">
-                <h2>@continent.Name</h2>
-                <img class="image-content" src="@continent.Image" alt="@continent.Name  map" />
-            </a>
-        </div>
-    }
-</div>
+            <h3>@continent.Name</h3>
+            <img class="image-content" src="@continent.Image" alt="@continent.Name  map" />
+        </a>
+    </div>
+}
