@@ -1,0 +1,36 @@
+﻿@using CityExplorer.Web.Areas.Administration.ViewModels;
+@{
+    ViewBag.Title = "Countries";
+    const string ControllerName = "Country";
+}
+<h2>@ViewBag.Title</h2>
+
+@(Html.Kendo()
+    .Grid<CountryViewModel>()
+    .Name("countries-grid")
+    .Columns(cols =>
+    {
+        cols.Bound(pr => pr.Id).Hidden();
+        cols.Bound(pr => pr.Name);
+        cols.Bound(pr => pr.Image);
+        cols.Bound(pr => pr.ContinentName);
+        cols.Bound(pr => pr.ContinentId).Hidden();
+        cols.Command(com => com.Edit()).Title("Edit");
+        cols.Command(com => com.Destroy()).Title("Delete");
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Groupable()
+    .Filterable()
+    .Editable(edit => edit.Mode(GridEditMode.PopUp))
+    .ToolBar(toolbar => toolbar.Create())
+    .DataSource(data =>
+        data
+            .Ajax()
+            .Model(m => m.Id(adv => adv.Id))
+            .Read(read => read.Action("ReadCountries", ControllerName))
+            .Create(create => create.Action("CreateCountry", ControllerName))
+            .Update(update => update.Action("UpdateCountry", ControllerName))
+            .Destroy(destroy => destroy.Action("DestroyCountry", ControllerName))
+            ))
