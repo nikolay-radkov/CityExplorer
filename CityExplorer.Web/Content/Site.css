@@ -140,6 +140,11 @@ textarea {
   text-align: center;
 }
 
+#feedback:hover {
+    width: 38px;
+    height: 126px;
+}
+
 .carousel-inner h1, .carousel-inner p{
      text-shadow: 2px 2px 2px #000000;
 }

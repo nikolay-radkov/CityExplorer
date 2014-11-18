@@ -8,7 +8,7 @@
     using Kendo.Mvc.UI;
     using System.Web.Mvc;
     
-    public class StatisticsController : AdminController
+    public class StatisticsController : BaseController
     {
         public StatisticsController(ICityExplorerData data)
             : base(data)

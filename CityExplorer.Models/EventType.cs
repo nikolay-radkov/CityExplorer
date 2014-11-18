@@ -3,7 +3,7 @@
     public enum EventType
     {
         Historical,
-        NearPars,
+        NearPast,
         Future        
     }
 }

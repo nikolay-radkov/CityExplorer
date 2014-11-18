@@ -69,7 +69,11 @@ namespace CityExplorer.Web.Controllers
 
         public ActionResult Events(int id)
         {
-            return GetPartialView(id, "_Events");
+            var city = this.Data.Cities.GetById(id);
+
+            var events = Mapper.Map<ICollection<EventViewModel>>(city.Events);
+
+            return PartialView("_Events", events);
         }
 
         [HttpPost]
@@ -122,26 +126,12 @@ namespace CityExplorer.Web.Controllers
                 this.Data.Cities.Add(city);
                 this.Data.SaveChanges();
 
+                this.TempData["message"] = "City added";
+
                 return RedirectToAction("Details", "City", new { id = city.Id });
             }
 
             return View(model);
-        }
-
-        [NonAction]
-        public ActionResult GetPartialView(int id, string partialView)
-        {
-            var city = this.Data.Cities.GetById(id);
-            var cityViewModel = Mapper.Map<CityViewModel>(city);
-
-            if (Request.IsAjaxRequest())
-            {
-                return PartialView(partialView, cityViewModel);
-            }
-            else
-            {
-                return View();
-            }
         }
     }
 }

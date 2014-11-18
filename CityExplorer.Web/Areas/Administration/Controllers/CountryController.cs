@@ -27,7 +27,7 @@
         [HttpPost]
         public ActionResult ReadCountries([DataSourceRequest]DataSourceRequest request)
         {
-            var countriesDataSource = this.Data.Feedbacks.All()
+            var countriesDataSource = this.Data.Countries.All()
                 .ToDataSourceResult(request, country => Mapper.Map<CountryViewModel>(country));
 
             return this.Json(countriesDataSource);

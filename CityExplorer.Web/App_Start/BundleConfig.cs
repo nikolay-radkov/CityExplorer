@@ -37,6 +37,8 @@ namespace CityExplorer.Web
                .Include("~/Scripts/kendo/kendo.all.min.js",
                "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/culture")
+              .Include("~/Scripts/cultures/kendo.culture.en-AU.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Scripts/kendo/jquery.min.js"));

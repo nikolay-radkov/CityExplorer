@@ -60,6 +60,9 @@
 
                     newId = landmark.Id;
                 }
+
+                this.TempData["message"] = "Landmark added";
+
                 return RedirectToAction("Index", "Landmark", new { id = newId });
 
             }

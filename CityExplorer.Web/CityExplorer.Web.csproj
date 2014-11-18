@@ -217,6 +217,7 @@
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\ContinentController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandmarkController.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="InputModels\CommentInputModel.cs" />
     <Compile Include="InputModels\CountryInputModel.cs" />
     <Compile Include="InputModels\CreateFeedbackInputModel.cs" />
+    <Compile Include="InputModels\EventInputModel.cs" />
     <Compile Include="InputModels\LandmarkViewModel.cs" />
     <Compile Include="InputModels\PhotoInputModel.cs" />
     <Compile Include="InputModels\VipInputModel.cs" />
@@ -249,6 +251,7 @@
     <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\ContinentViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LandmarkViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\PhotoViewModel.cs" />
@@ -537,6 +540,7 @@
     <Content Include="Libraries\Kendo.Mvc.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cultures\kendo.culture.en-AU.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -606,6 +610,7 @@
     <Content Include="Scripts\kendo\jquery.min.map" />
     <Content Include="Scripts\kendo\kendo.aspnetmvc.min.js.map" />
     <Content Include="Views\Feedback\Create.cshtml" />
+    <Content Include="Views\Event\Insert.cshtml" />
     <None Include="Views\Home\Countries.cshtml" />
     <Content Include="Views\Home\Cities.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
@@ -623,6 +628,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Home\_Carousel.cshtml" />
     <Content Include="Views\Shared\_AdministrationDropdown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EventType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Cities\" />

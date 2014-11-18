@@ -1,25 +1,54 @@
-﻿@*@model IEnumerable<CityExplorer.Web.ViewModels.EventsViewModel>*@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<CityExplorer.Web.ViewModels.EventViewModel>
 @{
     ViewBag.Title = "Events";
 }
 <div class="row">
-    <div class="col-md-12">
-        <h1 class="home-header">@ViewBag.Title</h1>
-    </div>
+    @if (Request.IsAuthenticated)
+    {
+        <div class="col-md-10 text-center">
+            <h1 class="home-header">@ViewBag.Title</h1>
+        </div>
+        <div class="col-md-2 text-center">
+            @Html.ActionLink("+", "Insert", "Event", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12">
+            <h1 class="home-header">@ViewBag.Title</h1>
+        </div>
+    }
 </div>
+
 @if (Model.Count() != 0)
 {
-    @*<div class="row">
+    <div class="row">
 
-        @foreach (var photo in Model)
+        @foreach (var item in Model)
         {
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb text-center">
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb text-center">
                 <div class="thumbnail">
-                    <img src="@photo.Url" class="img-responsive" alt="photo" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong>@item.Title</strong>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-5">
+                            @item.DateStarted
+                        </div>
+                        <div class="col-md-2">-</div>
+                        <div class="col-md-5">
+                            @(item.DateFinished != null ? item.DateFinished.ToString() : "Not finished yet")
+                        </div>
+                    </div>
                 </div>
             </div>
         }
-    </div>*@
+
+    </div>
 }
 else
 {

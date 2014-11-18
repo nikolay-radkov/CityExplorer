@@ -34,6 +34,24 @@
         </div>
     </div>
     <div class="container body-content">
+        @if (TempData["error"] != null)
+        {
+            <div class="bs-example">
+                <div class="alert alert-danger alert-error">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>@TempData["error"]</strong>
+                </div>
+            </div>
+        }
+        @if (TempData["message"] != null)
+        {
+            <div class="bs-example">
+                <div class="alert alert-success alert-success">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>@TempData["message"]</strong>
+                </div>
+            </div>
+        }
         @RenderBody()
         <a href="@Url.Action("Create","Feedback", new { area = string.Empty })">
             <img id="feedback" src="~/Images/feedback.png" alt="Feedback" />

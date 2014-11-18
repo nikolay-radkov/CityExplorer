@@ -11,7 +11,6 @@
 
     using Microsoft.AspNet.Identity;
     using CityExplorer.Data.Contracts;
-    using CityExplorer.Models;
     using CityExplorer.Data;
     using CityExplorer.Web.InputModels;
     using AutoMapper;

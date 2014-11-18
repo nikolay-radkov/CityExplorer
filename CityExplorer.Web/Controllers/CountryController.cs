@@ -54,8 +54,10 @@ namespace CityExplorer.Web.Controllers
 
                     newId = country.Id;
                 }
-                return RedirectToAction("Cities", "Home", routeValues: new { countryId = newId });
 
+                this.TempData["message"] = "Country added";
+
+                return RedirectToAction("Cities", "Home", routeValues: new { countryId = newId });
             }
         
             return View(model);

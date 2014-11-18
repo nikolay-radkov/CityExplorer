@@ -47,6 +47,8 @@ namespace CityExplorer.Web.Controllers
                     this.Data.SaveChanges();
                 }
 
+                this.TempData["message"] = "VIP added";
+
                 return RedirectToAction("Details", "City", new { id = id });
             }
 
