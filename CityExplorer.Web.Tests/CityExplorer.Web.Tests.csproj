@@ -35,6 +35,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -95,6 +115,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CityExplorer.Common\CityExplorer.Common.csproj">
+      <Project>{a77313de-7856-4a42-9701-c84d08f5b0c1}</Project>
+      <Name>CityExplorer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CityExplorer.Data.Contracts\CityExplorer.Data.Contracts.csproj">
+      <Project>{dea576f9-4313-40d7-8041-57a10cd79a1d}</Project>
+      <Name>CityExplorer.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CityExplorer.Data\CityExplorer.Data.csproj">
+      <Project>{394baaed-d279-434f-aa13-c287ef4d9c7a}</Project>
+      <Name>CityExplorer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CityExplorer.Models\CityExplorer.Models.csproj">
+      <Project>{e64e12c7-b3a0-4dfd-b550-df18c77bb031}</Project>
+      <Name>CityExplorer.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CityExplorer.Web\CityExplorer.Web.csproj">
       <Project>{D5391B33-7CAE-40DD-80E0-38F7F0DC9B87}</Project>
       <Name>CityExplorer.Web</Name>
@@ -108,6 +144,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

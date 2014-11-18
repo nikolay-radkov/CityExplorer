@@ -1,0 +1,33 @@
+﻿@using CityExplorer.Web.Areas.Administration.ViewModels;
+@{
+    ViewBag.Title = "Cities";
+    const string ControllerName = "City";
+}
+<h2>@ViewBag.Title</h2>
+
+@(Html.Kendo()
+    .Grid<CityViewModel>()
+    .Name("cities-grid")
+    .Columns(cols =>
+    {
+        cols.Bound(pr => pr.Id);
+        cols.Bound(pr => pr.Name);
+        cols.Bound(pr => pr.Area);
+        cols.Bound(pr => pr.Population);
+        cols.Bound(pr => pr.Website);
+        cols.Bound(pr => pr.SettledYear);
+        cols.Bound(pr => pr.Description);
+        cols.Command(com => com.Destroy()).Title("Delete");
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Filterable()
+    .Editable(edit => edit.Mode(GridEditMode.PopUp))
+    .DataSource(data =>
+        data
+            .Ajax()
+            .Model(m => m.Id(adv => adv.Id))
+            .Read(read => read.Action("ReadCities", ControllerName))
+            .Destroy(destroy => destroy.Action("DestroyCity", ControllerName))
+            ))
