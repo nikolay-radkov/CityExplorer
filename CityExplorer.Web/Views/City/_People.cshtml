@@ -1,13 +1,22 @@
 ﻿@model IEnumerable<CityExplorer.Web.ViewModels.VipViewModel>
-
+@{
+    ViewBag.Title = "Famous People";
+}
 <div class="row">
-    <div class="col-md-9">
-        <h1>People</h1>
-    </div>
+
     @if (Request.IsAuthenticated)
     {
-        <div class="col-md-3 text-right">
-            <h1>@Html.ActionLink("+", "Insert", "Vip", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })</h1>
+        <div class="col-md-10 text-center">
+            <h1 class="home-header">@ViewBag.Title</h1>
+        </div>
+        <div class="col-md-2 text-center">
+            @Html.ActionLink("+", "Insert", "Vip", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12">
+            <h1 class="home-header">@ViewBag.Title</h1>
         </div>
     }
 </div>

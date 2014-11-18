@@ -139,3 +139,16 @@ textarea {
   line-height: 34px;
   text-align: center;
 }
+
+.carousel-inner h1, .carousel-inner p{
+     text-shadow: 2px 2px 2px #000000;
+}
+
+.carousel-inner h1 {
+    font-size: 70px;
+}
+
+
+.carousel-inner p {
+    font-size: 20px;
+}

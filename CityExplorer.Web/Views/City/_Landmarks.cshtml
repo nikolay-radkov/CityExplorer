@@ -1,13 +1,22 @@
 ﻿@model IEnumerable<CityExplorer.Web.ViewModels.LandmarkViewModel>
-
+@{
+    ViewBag.Title = "Landmarks";
+}
 <div class="row">
-    <div class="col-md-9">
-        <h1>Landmarks</h1>
-    </div>
+
     @if (Request.IsAuthenticated)
     {
-        <div class="col-md-3 text-right">
-            <h1>@Html.ActionLink("+", "Insert", "Landmark", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })</h1>
+        <div class="col-md-10 text-center">
+            <h1 class="home-header">@ViewBag.Title</h1>
+        </div>
+        <div class="col-md-2 text-center">
+            @Html.ActionLink("+", "Insert", "Landmark", new { id = Url.RequestContext.RouteData.Values["id"] }, new { @class = "add-button" })
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12">
+            <h1 class="home-header">@ViewBag.Title</h1>
         </div>
     }
 </div>

@@ -615,6 +615,7 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Home\_Carousel.cshtml" />
+    <Content Include="Views\Shared\_AdministrationDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Cities\" />
