@@ -1,8 +1,40 @@
-﻿<h1> Stats</h1>
+﻿@using CityExplorer.Web.ViewModels;
+@{
+    ViewBag.Title = "Statistics";
+    const string ControllerName = "Statistics";
+}
+@section styles{
+    @Styles.Render("~/Content/kendo/styles")
+}
 
-<ul>
-    <li>Most population</li>
-    <li>Most rating</li>
-    <li>Most comments</li>
-    <li>Most visited</li>
-</ul>
+
+<h2>@ViewBag.Title</h2>
+
+@(Html.Kendo()
+    .Grid<CityStatisticsViewModel>()
+    .Name("statistics-grid")
+    .Columns(cols =>
+    {
+        cols.Bound(pr => pr.Id);
+        cols.Bound(pr => pr.Name);
+        cols.Bound(pr => pr.CountryName);
+        cols.Bound(pr => pr.ContinentName);
+        cols.Bound(pr => pr.Population);
+        cols.Bound(pr => pr.Rating);
+        cols.Bound(pr => pr.VisitedBy);
+        cols.Bound(pr => pr.CommentsNumber);
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Filterable()
+    .DataSource(data =>
+        data
+            .Ajax()
+            .Model(m => m.Id(adv => adv.Id))
+            .Read(read => read.Action("ReadStatistics", ControllerName))
+            ))
+
+@section scripts {
+    @Scripts.Render("~/bundles/kendo")
+}

@@ -1,17 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace CityExplorer.Web.Controllers
+﻿namespace CityExplorer.Web.Controllers
 {
-    public class StatisticsController : Controller
+    using AutoMapper;
+    using CityExplorer.Data;
+    using CityExplorer.Web.Areas.Administration.Controllers.Base;
+    using CityExplorer.Web.ViewModels;
+    using Kendo.Mvc.Extensions;
+    using Kendo.Mvc.UI;
+    using System.Web.Mvc;
+    
+    public class StatisticsController : AdminController
     {
-        // GET: Statistics
+        public StatisticsController(ICityExplorerData data)
+            : base(data)
+        {
+
+        }
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ReadStatistics([DataSourceRequest]DataSourceRequest request)
+        {
+            var citiesDataSource = this.Data.Cities.All()
+                .ToDataSourceResult(request, city => Mapper.Map<CityStatisticsViewModel>(city));
+
+            return this.Json(citiesDataSource);
         }
     }
 }
