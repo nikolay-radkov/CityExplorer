@@ -23,6 +23,8 @@
 
         IDeletableEntityRepository<Rating> Ratings { get; }
 
+        IDeletableEntityRepository<Feedback> Feedbacks { get; }
+
         IDeletableEntityRepository<VIP> VIPs { get; }
 
         IRepository<User> Users { get; }

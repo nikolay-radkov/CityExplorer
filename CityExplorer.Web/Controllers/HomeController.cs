@@ -29,7 +29,7 @@ namespace CityExplorer.Web.Controllers
             return View(continents);
         }
 
-        [OutputCache(Duration = 10 * 60)]
+       // [OutputCache(Duration = 10 * 60)]
         public ActionResult Countries(int continentid)
         {
             var counties = this.Data.Countries
@@ -41,7 +41,7 @@ namespace CityExplorer.Web.Controllers
             return View(counties);
         }
 
-        [OutputCache(Duration = 5 * 60)]
+        //[OutputCache(Duration = 5 * 60)]
         public ActionResult Cities(int countryId)
         {
             var city = this.Data.Cities

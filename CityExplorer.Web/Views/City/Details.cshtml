@@ -141,9 +141,11 @@
         </aside>
     </div>
     <div class="col-md-9">
-        <div id="content-loading" style="display: none">Loading content...</div>
-        <div id="content">
-            @Html.Action("Information", "City", new { id = Model.Id })
+        <div class="details-content">
+            <div id="content-loading" style="display: none">Loading content...</div>
+            <div id="content">
+                @Html.Action("Information", "City", new { id = Model.Id })
+            </div>
         </div>
     </div>
 </div>

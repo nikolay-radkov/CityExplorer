@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Continent.cs" />
     <Compile Include="EventType.cs" />
+    <Compile Include="Feedback.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="User.cs" />
     <Compile Include="City.cs" />

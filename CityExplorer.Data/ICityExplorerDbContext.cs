@@ -24,6 +24,8 @@
 
         IDbSet<VIP> VIPs { get; set; }
 
+        IDbSet<Feedback> Feedbacks { get; set; }
+
         DbContext DbContext { get; }
 
         int SaveChanges();

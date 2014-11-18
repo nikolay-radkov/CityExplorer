@@ -27,7 +27,6 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, new { @class = string.Empty })</li>
                     <li>@Html.ActionLink("Cities", "Index", "City", new { area = string.Empty }, new { @class = string.Empty })</li>
                     <li>@Html.ActionLink("Statistics", "Index", "Statistics", new { area = string.Empty }, new { @class = string.Empty })</li>
-
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -35,6 +34,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        <a href="@Url.Action("Create","Feedback", new { area = string.Empty })">
+            <img id="feedback" src="~/Images/feedback.png" alt="Feedback" />
+        </a>
         <hr />
         <footer class="text-center">
             <p>&copy; @DateTime.Now.Year - Nikolay Radkov</p>

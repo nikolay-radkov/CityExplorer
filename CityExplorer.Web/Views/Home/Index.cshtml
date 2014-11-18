@@ -1,30 +1,38 @@
 ﻿@model IList<CityExplorer.Web.ViewModels.ContinentViewModel>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Continents";
 }
 
-@for (int i = 0; i < Model.Count; i++)
-{
-    <div class="row text-center">
-        @for (int j = 0; j < 4; j++, i++)
-        {
-            if (i == Model.Count)
+<div class="row">
+    @Html.Partial("_Carousel", new CityExplorer.Web.ViewModels.CarouselViewModel { FirstSlideNumber = 6, SecondSlideNumber = 10, ThirdSlideNumber = 8 })
+</div>
+<div class="home-content">
+    <h1 class="home-header">@ViewBag.Title</h1>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="row text-center">
+            @for (int j = 0; j < 4; j++, i++)
             {
-                break;
-            }
+                if (i == Model.Count)
+                {
+                    break;
+                }
 
-            <div class="col-md-3">
-                <a href="@Url.Action("Countries", "Home",  routeValues: new
+                <div class="col-md-3">
+                    <a href="@Url.Action("Countries", "Home",  routeValues: new
                     {
                         continentId = @Model[i].Id
                     })">
-                    <h3>@Model[i].Name</h3>
-                    <img class="image-content" src="@Model[i].Image" alt="@Model[i].Name  map" />
-                </a>
-            </div>
-        }
-        @{
-            i--;
-        }
-    </div>
-}
+                        <h3>@Model[i].Name</h3>
+                        <div class="backgroundless">
+                            <img class="image-content" src="@Model[i].Image" alt="@Model[i].Name  map" />
+                        </div>
+                    </a>
+                </div>
+            }
+            @{
+        i--;
+            }
+        </div>
+    }
+</div>

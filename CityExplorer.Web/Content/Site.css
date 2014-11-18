@@ -1,8 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("../Images/background.png");
-background-repeat: repeat;
+    background-image: url("../Images/i5BCB25.gif");
+    background-repeat: repeat;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,9 +26,8 @@ background-repeat: repeat;
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
-
 
 .image-content {
     width: 200px;
@@ -32,31 +35,107 @@ textarea {
 }
 
 .scroller {
-    height: 200px;
+    max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .add-button {
-    color:greenyellow;
-    width: 45px;
-    height: 45px;
-    text-align: center;
+    background-image: url(../Images/add.png);
+    background-size: contain;
+    margin-top: 5px;
+    color: transparent;
+    width: 65px;
+    height: 65px;
     display: inline-block;
-    border: 3px solid greenyellow;
-    -moz-border-radius: 40px;
-    -webkit-border-radius: 40px;
-    border-radius: 40px;
     padding: 0;
     text-decoration: none;
 }
 
-.add-button:hover {
-    text-decoration: none;
-    color:red;
-}
+    .add-button:hover {
+        color: transparent;
+    }
 
 .continent {
     display: inline-block;
     margin: 10px;
+}
+
+
+.details-content {
+    color: white;
+    padding: 10px;
+    border: 5px solid #3E444C;
+    border-top: 0;
+    -webkit-border-bottom-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: #000000;
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(62, 68, 76, 0.68);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    opacity: 0.9;
+}
+
+.home-content {
+    margin-top: 20px;
+    color: white;
+    padding: 20px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: #000000;
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(62, 68, 76, 0.68);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    opacity: 0.9;
+}
+
+.home-header {
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background-color: ActiveBorder;
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: #000000;
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(62, 68, 76, 1.00);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    opacity: 0.9;
+}
+
+.backgroundless {
+}
+
+    .backgroundless > img:hover {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+
+#feedback {
+   position: fixed;
+  top: 330px;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 120px;
+  line-height: 34px;
+  text-align: center;
 }

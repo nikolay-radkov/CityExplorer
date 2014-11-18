@@ -3,27 +3,38 @@
     ViewBag.Title = "Cities";
 }
 <div class="row">
-    <div class="col-md-9">
-        <h1>@ViewBag.Title</h1>
-    </div>
-    @if (Request.IsAuthenticated)
-    {
-        <div class="col-md-3 text-right">
-            <h1>@Html.ActionLink("+", "Insert", "City", new { id = Request.Params["countryId"] }, new { @class = "add-button" })</h1>
-        </div>
-    }
+    @Html.Partial("_Carousel", new CityExplorer.Web.ViewModels.CarouselViewModel { FirstSlideNumber = 9, SecondSlideNumber = 4, ThirdSlideNumber = 7 })
 </div>
 
-<div class="row">
-    @foreach (var city in Model)
-    {
-        <div class="col-md-4 text-center">
-            <a href="@Url.Action("Details", "City",  routeValues: new
+<div class="home-content">
+    <div class="row">
+        @if (Request.IsAuthenticated)
+        {
+            <div class="col-md-11">
+                <h1 class="home-header">@ViewBag.Title</h1>
+            </div>
+            <div class="col-md-1 text-center">
+                @Html.ActionLink("+", "Insert", "City", new { id = Request.Params["countryId"] }, new { @class = "add-button" })
+            </div>
+        }
+        else
+        {
+            <div class="col-md-12">
+                <h1>@Html.ActionLink("+", "Insert", "City", new { id = Request.Params["countryId"] }, new { @class = "add-button" })</h1>
+            </div>
+        }
+    </div>
+    <div class="row">
+        @foreach (var city in Model)
+        {
+            <div class="col-md-4 text-center">
+                <a href="@Url.Action("Details", "City",  routeValues: new
                             {
                                 id = @city.Id
                             })">
-                <h2>@city.Name</h2>
-            </a>
-        </div>
-    }
+                    <h2>@city.Name</h2>
+                </a>
+            </div>
+        }
+    </div>
 </div>

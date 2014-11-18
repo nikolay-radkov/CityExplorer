@@ -28,16 +28,6 @@
             }
         }
 
-        //public IRepository<T> GetGenericRepository<T>() where T : class
-        //{
-        //    if (typeof(T).IsAssignableFrom(typeof(DeletableEntity)))
-        //    {
-        //        return this.GetDeletableEntityRepository<T>();
-        //    }
-
-        //    return this.GetRepository<T>();
-        //}
-
         public IRepository<User> Users
         {
             get { return this.GetRepository<User>(); }
@@ -89,7 +79,10 @@
             get { return this.GetDeletableEntityRepository<VIP>(); }
         }
 
-
+        public IDeletableEntityRepository<Feedback> Feedbacks
+        {
+            get { return this.GetDeletableEntityRepository<Feedback>(); }
+        }
 
         /// <summary>
         /// Saves all changes made in this context to the underlying database.

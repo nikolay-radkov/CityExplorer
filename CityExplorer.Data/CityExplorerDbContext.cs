@@ -40,6 +40,8 @@
 
         public virtual IDbSet<VIP> VIPs { get; set; }
 
+        public virtual IDbSet<Feedback> Feedbacks { get; set; }
+
         public static CityExplorerDbContext Create()
         {
             return new CityExplorerDbContext();

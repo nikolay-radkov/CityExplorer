@@ -3,28 +3,42 @@
     ViewBag.Title = "Countries";
 }
 <div class="row">
-    <div class="col-md-9">
-        <h1>@ViewBag.Title</h1>
-    </div>
-    @if (Request.IsAuthenticated)
-    {
-        <div class="col-md-3 text-right">
-            <h1>@Html.ActionLink("+", "Insert", "Country", new { id = Request.Params["continentId"] }, new { @class = "add-button" })</h1>
-        </div>
-    }
+    @Html.Partial("_Carousel", new CityExplorer.Web.ViewModels.CarouselViewModel { FirstSlideNumber = 2, SecondSlideNumber = 1, ThirdSlideNumber = 4 })
 </div>
-<div class="row">
+<div class="home-content">
+    <div class="row">
 
-    @foreach (var country in Model)
-    {
-        <div class="col-md-4 text-center">
-            <a href="@Url.Action("Cities", "Home",  routeValues: new
+        @if (Request.IsAuthenticated)
+        {
+            <div class="col-md-11">
+                <h1 class="home-header">@ViewBag.Title</h1>
+            </div>
+            <div class="col-md-1 text-center">
+                @Html.ActionLink("+", "Insert", "Country", new { id = Request.Params["continentId"] }, new { @class = "add-button" })
+            </div>
+        }
+        else
+        {
+            <div class="col-md-12">
+                <h1 class="home-header">@ViewBag.Title</h1>
+            </div>
+        }
+    </div>
+    <div class="row">
+
+        @foreach (var country in Model)
+        {
+            <div class="col-md-4 text-center">
+                <a href="@Url.Action("Cities", "Home",  routeValues: new
                             {
                                 countryId = @country.Id
                             })">
-                <h2>@country.Name</h2>
-                <img class="image-content" src="@country.Image" alt="@country.Name  map" />
-            </a>
-        </div>
-    }
+                    <h2>@country.Name</h2>
+                    <div class="backgroundless">
+                        <img class="image-content" src="@country.Image" alt="@country.Name  map" />
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
 </div>

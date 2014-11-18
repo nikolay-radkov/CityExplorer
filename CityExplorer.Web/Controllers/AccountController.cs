@@ -10,7 +10,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CityExplorer.Models;
 using CityExplorer.Web.ViewModels;
-using CityExplorer.Web.Models;
 
 namespace CityExplorer.Web.Controllers
 {

@@ -61,10 +61,9 @@
         @Html.DisplayFor(m => m.Website, new { @class = "form-control" })
     </div>
 </div>
-<br />
-<br />
 <div id="comments-container">
     @Html.Action("CommentsListPartial", new { cityId = Model.Id })
 </div>
-
-@Html.Partial("_Comment", new CityExplorer.Web.InputModels.CommentInputModel { CityId = Model.Id })
+<div class="row">
+    @Html.Partial("_Comment", new CityExplorer.Web.InputModels.CommentInputModel { CityId = Model.Id })
+</div>
