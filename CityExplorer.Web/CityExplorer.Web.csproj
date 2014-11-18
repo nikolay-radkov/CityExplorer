@@ -204,11 +204,12 @@
     <Compile Include="App_Start\ViewEnginesConfiguration.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\CityController.cs" />
     <Compile Include="Areas\Administration\Controllers\ContinentController.cs" />
     <Compile Include="Areas\Administration\Controllers\CountryController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
-    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Base\AdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\CityViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ContinentViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\CountryViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\FeedbackViewModel.cs" />
@@ -502,7 +503,6 @@
     </Content>
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\Home\Navigation.cshtml" />
     <Content Include="Areas\Administration\Views\Continent\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Date.cshtml" />
@@ -518,6 +518,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Areas\Administration\Views\Country\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Feedback\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\City\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\add.png" />
     <Content Include="Images\background.png" />
@@ -628,12 +629,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Home\_Carousel.cshtml" />
     <Content Include="Views\Shared\_AdministrationDropdown.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\EventType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Cities\" />
     <Folder Include="Files\Countries\" />
-    <Folder Include="Views\Photo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

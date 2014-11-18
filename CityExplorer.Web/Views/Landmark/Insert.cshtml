@@ -8,21 +8,30 @@
 @using (Html.BeginForm("Insert", "Landmark", FormMethod.Post,
                             new { enctype = "multipart/form-data" }))
 {
+    <hr />
     @Html.AntiForgeryToken()
 
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    <div class="form-group text-right">
+        <div class="row">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
         </div>
     </div>
-    <label for="file">Upload Image:</label>
-    <input type="file" name="Photo" id="Photo" style="width: 100%;" />
+
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Add" />
+        <div class="row">
+            <div class="col-md-2 text-right">
+                <label for="file" class="control-label">Upload Image:</label>
+            </div>
+            <div class="col-md-10">
+                <input type="file" class="form-control" name="Photo" id="Photo" style="width: 100%;" />
+            </div>
         </div>
+        <br />
+        <input type="submit" value="Upload" class="btn btn-primary btn-lg center-block" />
     </div>
 }
 

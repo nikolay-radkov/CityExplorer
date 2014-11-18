@@ -8,11 +8,20 @@
 @using (Html.BeginForm("AddPhoto", "Landmark", FormMethod.Post,
                             new { enctype = "multipart/form-data" }))
 {
+    <hr />
     @Html.AntiForgeryToken()
-
-    <label for="file">Upload Image:</label>
-    <input type="file" name="file" id="file" style="width: 100%;" />
-    <input type="submit" value="Upload" class="submit" />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2 text-right">
+                <label for="file" class="control-label">Upload Image:</label>
+            </div>
+            <div class="col-md-10">
+                <input type="file" class="form-control" name="file" id="file" style="width: 100%;" />
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Upload" class="btn btn-primary btn-lg center-block" />
+    </div>
 }
 
 @section Scripts {

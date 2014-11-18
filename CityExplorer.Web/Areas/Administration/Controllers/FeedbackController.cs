@@ -8,6 +8,7 @@
     using Kendo.Mvc.UI;
     using System.Web.Mvc;
 
+    [Authorize(Roles = "Admin")]
     public class FeedbackController : AdminController
     {
         public FeedbackController(ICityExplorerData data)

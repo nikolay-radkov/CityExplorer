@@ -6,6 +6,7 @@
 <h1>@ViewBag.Title</h1>
 @using (Html.BeginForm("Create", "Feedback", FormMethod.Post, new { @class = "form-horizontal" }))
 {
+    <hr />
     @Html.AntiForgeryToken()
 
     @Html.ValidationSummary("", new { @class = "text-danger" })

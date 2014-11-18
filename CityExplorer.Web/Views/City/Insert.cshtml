@@ -1,15 +1,14 @@
 ﻿@model CityExplorer.Web.InputModels.CityInputModel
 @{
-    ViewBag.Title = "Insert";
+    ViewBag.Title = "Insert City";
 }
 
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Insert", "City", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
     <hr />
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
@@ -38,7 +37,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows="4" })
         </div>
     </div>
     <div class="form-group">
@@ -49,7 +48,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-primary btn-lg center-block" value="Add" />
         </div>
     </div>
 }
