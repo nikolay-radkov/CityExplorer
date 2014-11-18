@@ -204,13 +204,14 @@
     <Compile Include="App_Start\ViewEnginesConfiguration.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdminController.cs" />
-    <Compile Include="Areas\Administration\Controllers\Base\KendoGridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ContinentController.cs" />
     <Compile Include="Areas\Administration\Controllers\CountryController.cs" />
+    <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Base\AdministrationViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ContinentViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\CountryViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\FeedbackViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CityController.cs" />
@@ -510,6 +511,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Areas\Administration\Views\Country\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Feedback\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\add.png" />
     <Content Include="Images\background.png" />

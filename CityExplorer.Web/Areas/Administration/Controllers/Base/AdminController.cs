@@ -4,7 +4,7 @@
     using CityExplorer.Web.Controllers;
     using System.Web.Mvc;
 
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles="Admin")]
     public abstract class AdminController : BaseController
     {
         public AdminController(ICityExplorerData data)

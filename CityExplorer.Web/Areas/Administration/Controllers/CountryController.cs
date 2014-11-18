@@ -10,6 +10,7 @@
     using System;
     using System.Web.Mvc;
 
+    [Authorize(Roles="Admin")]
     public class CountryController : AdminController
     {
         public CountryController(ICityExplorerData data)
@@ -26,12 +27,11 @@
         [HttpPost]
         public ActionResult ReadCountries([DataSourceRequest]DataSourceRequest request)
         {
-            var countriesDataSource = this.Data.Countries.All()
+            var countriesDataSource = this.Data.Feedbacks.All()
                 .ToDataSourceResult(request, country => Mapper.Map<CountryViewModel>(country));
 
             return this.Json(countriesDataSource);
         }
-
 
         [HttpPost]
         public ActionResult CreateCountry([DataSourceRequest]DataSourceRequest request, CountryViewModel model)

@@ -11,6 +11,7 @@
     using System.Runtime;
     using System.Web.Mvc;
 
+    [Authorize(Roles = "Admin")]
     public class ContinentController : AdminController
     {
         public ContinentController(ICityExplorerData data)
